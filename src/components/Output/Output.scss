@@ -1,0 +1,15 @@
+.output {
+    height: 50px;
+    width: 100%;
+
+    padding: 10px;
+
+    border-radius: 5px;
+    border: 2px solid darkgray;
+
+    background-color:transparent;
+    outline-color: darkgray;
+    outline-width: 1px;
+
+    grid-column: 1/4;
+}
