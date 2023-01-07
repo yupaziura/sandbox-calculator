@@ -26,7 +26,7 @@ function App() {
     
   }
 
-  const data = [1,2,3,4,5,6,7,8,9,0,'+','-','*','/', '=', 'AC'];
+  const data = ['AC','+', 1,2,3,'-',4,5,6,'*',7,8,9,'/', 0, '.', '='];
   return (
     <div className="App">
         <div className="container">
@@ -34,7 +34,7 @@ function App() {
         {
           data.map((item, i)=> {
             return (
-              <Button key={i} input={item} result={result} action={changeResult}/>
+              <Button className={`button button-${item}`} key={i} input={item} result={result} action={changeResult}/>
             )
           })
         }

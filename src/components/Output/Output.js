@@ -3,7 +3,7 @@ import './Output.scss';
 const Output = ({value, setResult}) => {
     return (
         <>
-            <input className='output' type="text" value={value} onChange={(e)=>{setResult(e.target.value)}}/>
+            <input placeholder='0' autoFocus className='output' type="text" value={value} onChange={(e)=>{setResult(e.target.value)}}/>
         </>
     )
 }

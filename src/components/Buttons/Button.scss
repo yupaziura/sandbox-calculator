@@ -12,7 +12,19 @@
     font-size: 20px;
     font-weight: bolder;
 
+    &-AC{
+        grid-column: 1/4;
+        background-color: #EE6352;
+    }
+    &-\={
+        grid-column: 3/5;
+        background-color:#62929E;
+    }
+
+   &-\+, &-\-, &-\*, &-\/ {
+    background-color: #C6C5B9;
+   }
     &:hover{
-        background-color: rgb(193, 193, 193) ;
+        filter: brightness(0.8);
     }
 }
