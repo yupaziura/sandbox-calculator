@@ -1,9 +1,9 @@
 import './Button.scss';
 
-const Button = ({value, width}) => {
+const Button = ({input, result, width, action}) => {
     return (
         <>
-            <button id='but' className='button' style={{width: width}}>{value}</button>
+            <button onClick={(e)=>action(input,result)}  id='but' className='button' style={{width: width}}>{input}</button>
         </>
     )
 }

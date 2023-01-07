@@ -1,9 +1,9 @@
 import './Output.scss';
 
-const Output = ({value}) => {
+const Output = ({value, setResult}) => {
     return (
         <>
-            <input className='output' type="text" value={value}/>
+            <input className='output' type="text" value={value} onChange={(e)=>{setResult(e.target.value)}}/>
         </>
     )
 }

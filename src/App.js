@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import Button from './components/Buttons/Button';
 import Output from './components/Output/Output';
 
@@ -5,29 +7,37 @@ import './App.css';
 
 function App() {
 
-  const data = [1,2,3,4,5,6,7,8,9,0,'+','-','*','/', '=']
+  const [result, setResult] = useState('');
+
+
+  const changeResult = (input,result) => {
+    if (input==='=') {
+      // eslint-disable-next-line
+      setResult(eval(result).toString());
+    }
+
+    else if (input==='AC' ) {
+      setResult('')
+    }
+
+    else{
+      setResult(result.toString()+input.toString())
+    }
+    
+  }
+
+  const data = [1,2,3,4,5,6,7,8,9,0,'+','-','*','/', '=', 'AC'];
   return (
     <div className="App">
         <div className="container">
-        <Output/>
+        <Output value={result} setResult={setResult}/>
         {
           data.map((item, i)=> {
             return (
-              <Button key={i} value={item} />
+              <Button key={i} input={item} result={result} action={changeResult}/>
             )
           })
         }
-
-        {/* <Button value={1} />
-        <Button value={2} />
-        <Button value={3} />
-        <Button value={4} />
-        <Button value={5} />
-        <Button value={6} />
-        <Button value={7} />
-        <Button value={8} />
-        <Button value={9} />
-        <Button value={0} /> */}
         </div>
     </div>
   );
