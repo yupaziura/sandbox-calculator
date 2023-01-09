@@ -8,12 +8,15 @@ import './App.css';
 function App() {
 
   const [result, setResult] = useState('');
+  const [history, setHistory] = useState('');
 
 
   const changeResult = (input,result) => {
     if (input==='=') {
+      setHistory(result);
       // eslint-disable-next-line
       setResult(eval(result).toString());
+
     }
 
     else if (input==='AC' ) {
@@ -35,7 +38,7 @@ function App() {
   return (
     <div className="App">
         <div className="container">
-        <Output value={result} setResult={setResult}/>
+        <Output history={history} value={result} setResult={setResult}/>
         {
           data.map((item, i)=> {
             return (
