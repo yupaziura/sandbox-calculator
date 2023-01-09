@@ -20,13 +20,18 @@ function App() {
       setResult('')
     }
 
+    else if(input==='DEL') {
+      setResult(result?.slice(0, -1))
+    }
+
     else{
       setResult(result.toString()+input.toString())
     }
     
   }
 
-  const data = ['AC','+', 1,2,3,'-',4,5,6,'*',7,8,9,'/', 0, '.', '='];
+  const data = ['AC', "DEL",'+', 1,2,3,'-',4,5,6,'*',7,8,9,'/', 0, '.', '='];
+
   return (
     <div className="App">
         <div className="container">

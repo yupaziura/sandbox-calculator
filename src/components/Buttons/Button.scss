@@ -13,8 +13,13 @@
     font-weight: bolder;
 
     &-AC{
-        grid-column: 1/4;
+        grid-column: 1/3;
         background-color: #EE6352;
+    }
+
+    &-DEL{
+        background-color: #EE6352;
+   
     }
     &-\={
         grid-column: 3/5;
