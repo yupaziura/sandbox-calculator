@@ -10,9 +10,18 @@ function App() {
   const [result, setResult] = useState('');
   const [history, setHistory] = useState('');
 
+  const [error, setError] = useState(false);
+
+
+  const throwError = (e) => {
+    if(!e.key.match(/[0-9+-/*]/) && e.key !=='Shift' && e.key !== 'Backspace' && e.key !== "Enter") {
+      setError(true);
+    }
+  }
+
 
   const changeResult = (input,result) => {
-    if (input==='=') {
+      if (input==='=' ) {
       setHistory(result);
       // eslint-disable-next-line
       setResult(eval(result).toString());
@@ -20,7 +29,8 @@ function App() {
     }
 
     else if (input==='AC' ) {
-      setResult('')
+      setResult('');
+      setError(false);
     }
 
     else if(input==='DEL') {
@@ -38,7 +48,7 @@ function App() {
   return (
     <div className="App">
         <div className="container">
-        <Output history={history} value={result} setResult={setResult}/>
+        <Output error={error} throwError={throwError} history={history} value={result} setResult={setResult}/>
         {
           data.map((item, i)=> {
             return (
