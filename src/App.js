@@ -17,6 +17,11 @@ function App() {
     if(!e.key.match(/[0-9+-/*]/) && e.key !=='Shift' && e.key !== 'Backspace' && e.key !== "Enter") {
       setError(true);
     }
+    else if (e.key === 'Enter'){
+      setHistory(result);
+      // eslint-disable-next-line
+      setResult(eval(result).toString());
+    }
   }
 
 
